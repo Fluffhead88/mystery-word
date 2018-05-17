@@ -13,26 +13,26 @@ print ("This word has", len(answer), "letters.")
 
 print ("_" * len(answer))
 
-def letter_guess(letter):
+
+def guess():
     letter = input("Guess a letter" ).lower()
     if letter in answer:
         return True
     else:
         return False
-        print (letter)
-letter_guess()
 
 
-"""def play(letter, turns):
+
+def playing(letter, turns):
     while turns <= 8:
-        if letter_guess(letter) not in (answer):
-            turns -= 1
-        else:
-            turns = 8
-            return letter, turns
-play()
+        if guess():
 
-def main():
+        else:
+
+            
+
+
+"""def game():
     turns = 8
 
 
@@ -40,4 +40,4 @@ def main():
         print(num_turns)
         input_letter = input("Guess a letter ").lower()
 
-main()"""
+game()"""
