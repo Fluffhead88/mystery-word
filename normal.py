@@ -2,27 +2,29 @@
 # Word guessing game, similar to hang man
 import random
 
-with open(`/usr/share/dict/words`) as infile:
-    word = infile.read()
+with open('/usr/share/dict/words') as infile:
+    word = infile.readlines()
 
-answer = random.word(word)
+answer = random.choice(word).lower()
 
-print ("This work has" len(answer) " letters.")
+print (answer)
 
-#def letter_guess(answer):
-#    letter = input("Guess a letter" )
-#    if letter in answer:
-#        return True
-#    else:
-#        return False
+"""print ("This work has" len(answer) " letters.")
 
-guess = input("Guess a letter ")
+print ("_" * len(answer))
+
+def letter_guess(answer):
+    letter = input("Guess a letter" ).lower()
+    if letter in answer:
+        return True
+    else:
+        return False
+
 turns = 8
 
-def play(letter):
-    while turns < 8:
-        if letter_guess in answer:
-            print (letter)
+def play(letter, turns):
+    while turns <= 8:
+        if letter_guess(letter):
+            return (letter)
         else:
-            turn -= 1
-        print ("_")
+            turn -= 1"""
