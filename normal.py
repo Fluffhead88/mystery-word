@@ -7,24 +7,37 @@ with open('/usr/share/dict/words') as infile:
 
 answer = random.choice(word).lower()
 
-print (answer)
 
-"""print ("This work has" len(answer) " letters.")
+
+print ("This word has", len(answer), "letters.")
 
 print ("_" * len(answer))
 
-def letter_guess(answer):
+def letter_guess(letter):
     letter = input("Guess a letter" ).lower()
     if letter in answer:
         return True
     else:
         return False
+        print (letter)
+letter_guess()
 
-turns = 8
 
-def play(letter, turns):
+"""def play(letter, turns):
     while turns <= 8:
-        if letter_guess(letter):
-            return (letter)
+        if letter_guess(letter) not in (answer):
+            turns -= 1
         else:
-            turn -= 1"""
+            turns = 8
+            return letter, turns
+play()
+
+def main():
+    turns = 8
+
+
+    while num_turns > 0:
+        print(num_turns)
+        input_letter = input("Guess a letter ").lower()
+
+main()"""
