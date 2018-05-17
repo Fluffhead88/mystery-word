@@ -7,7 +7,7 @@ with open('/usr/share/dict/words') as infile:
 
 answer = random.choice(word).lower()
 
-
+print (answer)
 
 print ("This word has", len(answer), "letters.")
 
@@ -20,24 +20,8 @@ def guess():
         return True
     else:
         return False
+    
+guess()
 
-
-
-def playing(letter, turns):
-    while turns <= 8:
-        if guess():
-
-        else:
-
-            
-
-
-"""def game():
-    turns = 8
-
-
-    while num_turns > 0:
-        print(num_turns)
-        input_letter = input("Guess a letter ").lower()
-
-game()"""
+#keep track of letters guessed store correct and incorrect, store all correct
+# incorrect and if they're correct print the letter, if incorrect print _
