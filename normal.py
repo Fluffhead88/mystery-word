@@ -3,22 +3,26 @@
 import random
 
 with open(`/usr/share/dict/words`) as infile:
-    words = infile.read()
+    word = infile.read()
 
-answer = random.word(words)
+answer = random.word(word)
 
-guess = input("Guess a letter" )
+print ("This work has" len(answer) " letters.")
 
+#def letter_guess(answer):
+#    letter = input("Guess a letter" )
+#    if letter in answer:
+#        return True
+#    else:
+#        return False
+
+guess = input("Guess a letter ")
 turns = 8
 
-while turns < 8:
-    wrong = 0
-    for letter in word:
-        if letter in answer:
+def play(letter):
+    while turns < 8:
+        if letter_guess in answer:
             print (letter)
         else:
-            print ("_")
-            wrong +=1
-
-if guess not in answer:
-    turn -= 1
+            turn -= 1
+        print ("_")
