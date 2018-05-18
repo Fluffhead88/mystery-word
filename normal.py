@@ -2,30 +2,46 @@
 # Word guessing game, similar to hang man
 import random
 
-#def choose_word:
 with open('/usr/share/dict/words') as infile:
     word = infile.readlines()
 
 answer = random.choice(word).lower()
-
-print (answer)
-
-
-
-#print ("_" * len(answer))
-
-letter_guessed = []
-guessed_letters = []
+used_letters = []
 game_word = []
 len_word = len(answer)
+print (answer)
 
-def get_word():
+def display():
     for char in answer:
-        guess_word.append("_")
+        game_word.append('_')
     print("This word has ", len_word, "letters")
-    return(game_word)
+    print(game_word)
+    return game_word
 
 
+
+def play():
+    turns = 8
+    print (turns)
+    letter_guessed = (input("Guess a letter > ")).lower()
+    while turns < 8:
+        if letter_guessed in used_letters:
+            print ("You already guessed that letter.")
+        else:
+            used_letters.append(letter_guessed)
+            if letter_guessed in answer:
+                print("Correct!")
+                # Do something to replace "_" with letters
+            for letter in range(0, len_word):
+                if answer[letter] == letter_guessed:
+                    game_word[letter] = letter_guessed
+                else:
+                    turn -= 1
+                if '_' not in game_word:
+                    print("You win!")
+
+display()
+play()
 
 """def guess(answer):
     letter_guessed = str(input("Guess a letter > ")).lower()
@@ -33,30 +49,6 @@ def get_word():
         return True, guessed_letters
     else:
         return False, guessed_letters"""
-
-
-def play():
-    turns = 8
-    print (turns)
-    while turns < 8
-    letter_guessed = str(input("Guess a letter > ")).lower()
-    if letter_guessed in guessed_letters:
-        print ("You already guessed that letter.")
-    else:
-        guessed_letters.append(guess)
-    if guess in answer:
-        print("Correct!")
-        # Do something to replace "_" with letters
-        for letter in range(0, len_word):
-            if answer[letter] == letter_guessed:
-                game_word[letter] = letter_guessed
-        if not '_' in game_word:
-            print("You win!")
-    else:
-        turn -= 1
-
-get_word()
-play()
 
 
 """def print_letter(answer):
