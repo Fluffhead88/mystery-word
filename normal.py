@@ -10,27 +10,56 @@ answer = random.choice(word).lower()
 
 print (answer)
 
-print ("This word has", len(answer), "letters.")
+
 
 #print ("_" * len(answer))
 
 letter_guessed = []
 guessed_letters = []
+game_word = []
+len_word = len(answer)
 
-def guess(answer):
+def get_word():
+    for char in answer:
+        guess_word.append("_")
+    print("This word has ", len_word, "letters")
+    return(game_word)
+
+
+
+"""def guess(answer):
     letter_guessed = str(input("Guess a letter > ")).lower()
     if letter_guessed in answer:
         return True, guessed_letters
     else:
-        return False, guessed_letters
-
-def check():
-    for letter in range(len(answer)):
-        if guess(answer):
-            word_guessed[letter] = letter_guessed
+        return False, guessed_letters"""
 
 
-def print_letter(answer):
+def play():
+    turns = 8
+    print (turns)
+    while turns < 8
+    letter_guessed = str(input("Guess a letter > ")).lower()
+    if letter_guessed in guessed_letters:
+        print ("You already guessed that letter.")
+    else:
+        guessed_letters.append(guess)
+    if guess in answer:
+        print("Correct!")
+        # Do something to replace "_" with letters
+        for letter in range(0, len_word):
+            if answer[letter] == letter_guessed:
+                game_word[letter] = letter_guessed
+        if not '_' in game_word:
+            print("You win!")
+    else:
+        turn -= 1
+
+get_word()
+play()
+
+
+"""def print_letter(answer):
     turns = 8
     blank_word = ("_" * len(answer))
     while turns > 0:
@@ -39,9 +68,10 @@ def print_letter(answer):
             print (correct_guess.append(letter_guessed)) # append to list of correct guesses
         else:
             turns -=1
-        return blank_word
+        return blank_word"""
 
-print_letter(answer)
+
+#print_letter(answer)
 
 
 
