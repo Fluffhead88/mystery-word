@@ -9,20 +9,19 @@ answer = random.choice(word).lower().replace("\n", "")
 used_letters = []
 game_word = []
 len_word = len(answer)
-print (answer)
 
 def display():
     for char in answer:
         game_word.append('_')
-    print("This word has ", len_word, "letters")
+    print("This word has ", len_word, "letters.")
     return game_word
 
 
 
 def play():
     turns = 8
-    print (turns)
     while turns > 0:
+        print ("You have", turns, "guesses remaining.")
         print(game_word)
         if '_' not in game_word:
             print("You win!")
@@ -36,6 +35,10 @@ def play():
                 print("Correct!")
             else:
                 turns -= 1
+            if turns >= 1:
+                print ("Sorry, please try again.")
+            if turns == 0:
+                print ("You lose!")
             for letter in range(0, len_word):
                 if answer[letter] == letter_guessed:
                     game_word[letter] = letter_guessed
