@@ -39,6 +39,7 @@ def play():
                 print ("Sorry, please try again.")
             if turns == 0:
                 print ("You lose!")
+                print ("The answer was", answer)
             for letter in range(0, len_word):
                 if answer[letter] == letter_guessed:
                     game_word[letter] = letter_guessed
